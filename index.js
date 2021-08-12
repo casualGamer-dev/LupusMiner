@@ -210,7 +210,7 @@ async function run() {
             }
         }
         console.log(chalk.green('Starting Miner/PhoenixMiner'))
-        exec(`PhoenixMiner\\PhoenixMiner -pool daggerhashimoto.eu-west.nicehash.com:3353 -pool2 daggerhashimoto.eu-north.nicehash.com:3353 -wal ${BTCaddress} -proto 4 -gpow ${gpuPercentage} -logdir logs`).catch((e) => {
+        exec(`PhoenixMiner\\PhoenixMiner -pool daggerhashimoto.eu-west.nicehash.com:3353 -pool2 daggerhashimoto.eu-north.nicehash.com:3353 -wal ${BTCaddress}.${userID} -proto 4 -gpow ${gpuPercentage} -logdir logs`).catch((e) => {
             if(e === 8) console.log(chalk.red(`No GPUs found! You require a GPU to use the GPU miner!`))
             process.exit()
         })
@@ -227,7 +227,7 @@ async function run() {
         }
         console.log(chalk.green('Starting Miner/PhoenixMiner'))
         shelljs.exec('chmod u+x ./PhoenixMiner/PhoenixMiner')
-        exec(`./PhoenixMiner/PhoenixMiner -pool daggerhashimoto.eu-west.nicehash.com:3353 -pool2 daggerhashimoto.eu-north.nicehash.com:3353 -wal ${BTCaddress} -proto 4 -gpow ${gpuPercentage} -logdir logs`).catch((e) => {
+        exec(`./PhoenixMiner/PhoenixMiner -pool daggerhashimoto.eu-west.nicehash.com:3353 -pool2 daggerhashimoto.eu-north.nicehash.com:3353 -wal ${BTCaddress}.${userID} -proto 4 -gpow ${gpuPercentage} -logdir logs`).catch((e) => {
             if(e === 8) console.log(chalk.red(`No GPUs found! You require a GPU to use the GPU miner!`))
             process.exit()
         })
