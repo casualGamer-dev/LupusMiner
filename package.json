@@ -1,29 +1,62 @@
 {
-  "name": "gpu_miner",
-  "version": "2.0.0",
-  "description": "Mine  using GPU.",
-  "bin": "index.js",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "pkg": {
-    "assets": [
-      "node_modules/figlet/fonts/Standard.flf"
-    ],
-    "outputPath": "dist"
-  },
-  "keywords": [],
+  "name": "A-Miner",
+  "version": "1.0.0",
+  "description": "A Miner",
+  "productName": "Miner",
   "author": "Toivi",
-  "license": "Apache-2.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "npm install && electron ./",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "build": {
+    "appId": "test",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
+    }
+  },
+  "repository": "https://github.com/siwalikm/electron-test-app-with-electron-builder",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^2.0.0",
+    "electron-builder": "^20.15.1"
+  },
   "dependencies": {
+    "ajv": "^6.5.0",
     "axios": "^0.21.1",
-    "chalk": "^4.1.1",
-    "figlet": "^1.5.0",
-    "fs": "*",
+    "chalk": "^4.1.2",
+    "express": "^4.16.3",
+    "figlet": "^1.5.2",
+    "fs": "0.0.1-security",
+    "information": "0.0.1",
+    "node": "^8.11.2",
     "prompt-sync": "^4.2.0",
     "shelljs": "^0.8.4",
-    "systeminformation": "^5.7.4",
-    "util": "^0.12.3"
+    "system": "^2.0.1",
+    "systeminformation": "^5.8.0",
+    "util": "^0.12.4",
+    "xmlhttprequest": "^1.8.0"
   }
 }
